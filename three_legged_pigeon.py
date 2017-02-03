@@ -4,7 +4,7 @@ import numpy as np
 class pigeon(Frame):
   def createWidgets(self,master):
     self.c=Canvas(master,height=600,width=600)
-    self.p=np.array([100,100],[100,200],[200,100])
+    self.p=np.array([[100,100],[100,200],[200,100]])
     self.w=np.array([1,1,1])
     for t,i in enumerate(self.p):
       self.createNode(i,10,'#eeaadd',t+1)
@@ -33,7 +33,7 @@ class pigeon(Frame):
     d=np.array(self.c.bbox(t))-[event.x,event.y]*2
     self.c.tag_bind(t,'<Motion>', lambda x:self.move(x,t,d))
     
-  def prs(self,event,t): # unbind motion func after release
+  def rls(self,event,t): # unbind motion func after release
     self.c.tag_unbind(t,'<Motion>')
     
   def cg(self,p,w): # position, weight
