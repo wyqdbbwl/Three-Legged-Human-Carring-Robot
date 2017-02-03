@@ -4,7 +4,7 @@ import numpy as np
 class pigeon(Frame):
   def createWidgets(self,master):
     self.c=Canvas(master,height=600,width=600)
-    self.p=np.array([100,100],[100,200],[200,100]])
+    self.p=np.array([100,100],[100,200],[200,100])
     self.w=np.array([1,1,1])
     for t,i in enumerate(self.p):
       self.createNode(i,10,'#eeaadd',t+1)
